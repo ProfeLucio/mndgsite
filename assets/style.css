@@ -1,0 +1,119 @@
+.navbar {
+  background-color: #ffffff33;
+}
+
+.solid-bg {
+  background-color: #0c3b6566; /* Color sólido sin transparencia */
+  color: white;
+}
+
+.navbar-brand img {
+  height: 40px; /* Ajusta esto según el tamaño de tu logo */
+}
+
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: white; /* Contraste para el texto sobre el video */
+  text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Difuminado para mejorar la legibilidad */
+}
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Asegúrate que sea más alto que otros elementos */
+}
+
+
+
+.caveat {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #0c3b65;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+/* Estilos generales del Footer */
+footer {
+    background-color: #0c3b65; /* Oscuro para contraste */
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Títulos en el Footer */
+  footer h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: bold; /* Hacer que los títulos sean más audaces */
+  }
+  
+  /* Estilos de los enlaces en el Footer */
+  footer a {
+    color: #ffc107; /* Un color que resalte contra el fondo oscuro */
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease; /* Transición suave para el color */
+  }
+  
+  footer a:hover {
+    color: #ffffff; /* Color al pasar el ratón por encima */
+    text-decoration: none; /* Quitar el subrayado al pasar el ratón */
+  }
+  
+  /* Sección de contacto y redes sociales */
+  .footer-contact,
+  .footer-social {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-social a {
+    display: inline-block; /* Mostrar enlaces en línea para un diseño más compacto */
+    margin-right: 0.5rem; /* Espacio entre enlaces de redes sociales */
+  }
+  
+  /* Estilos para el texto legal en la parte inferior del Footer */
+  .footer-legal {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .footer-legal a {
+    color: inherit; /* Los enlaces usan el color de texto del footer */
+  }
+  
+  @media (max-width: 767px) {
+    /* Ajustes para dispositivos más pequeños */
+    .footer-social,
+    .footer-contact {
+      text-align: center;
+    }
+  
+    .footer-social a {
+      margin: 0 0.5rem; /* Ajuste de margen para visualización móvil */
+    }
+  
+    .footer-legal {
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+  
