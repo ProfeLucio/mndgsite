@@ -1,0 +1,27 @@
+name: Deploy al VPS
+ 
+on:
+  push:
+	branches:
+  	- main  # o la rama que uses para producción
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+ 
+    steps:
+	- name: Checkout del código
+      uses: actions/checkout@v3
+ 
+	- name: Deploy via SSH al VPS
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.DEPLOY }}
+        script: |
+          echo "[DEPLOY] Inicio: $(date)"
+          cd /home/deployuser/projects/mi_proyecto
+          git pull origin main
+          rsync -av --delete /home/deployuser/projects/mi_proyecto/ /var/www/html/mi_proyecto/
+          echo "[DEPLOY] Finalizado: $(date)"
