@@ -1,23 +1,23 @@
 name: Deploy al VPS
- 
+
 on:
   push:
-	branches:
-  	- main  # o la rama que uses para producción
- 
+    branches:
+      - main  # o la rama que uses para producción
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
- 
+
     steps:
-	- name: Deploy via SSH al VPS
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.DEPLOY }}
-        script: |
-          echo "[DEPLOY] Inicio: $(date)"
-          cd /home/deployuser/project
-          git pull origin main
-          echo "[DEPLOY] Finalizado: $(date)"
+      - name: Deploy via SSH al VPS
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.DEPLOY }}
+          script: |
+            echo "[DEPLOY] Inicio: $(date)"
+            cd /home/deployuser/project
+            git pull origin main
+            echo "[DEPLOY] Finalizado: $(date)"
